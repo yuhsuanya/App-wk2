@@ -1,81 +1,96 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View,Image } from "react-native";
+import Header from './src/components/Header';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.p1}>110619044</Text>
-      <Text style={styles.p2}>楊育瑄</Text>
+    <View>
+      <View style={[
+        styles.cardContainerStyle,
+        styles.cardSectionStyle,    
+      ]}>
 
+       <View style={styles.thumbnailContainerStyle}>
+        <Image
+          style={styles.thumbnailStyle}
+          source={{
+            uri: "https://i.imgur.com/K3KJ3w4h.jpg"
+          }}
+        />
+        <View style={styles.headerContentStyle}>
+          <Text>Eric Chou</Text>
+          <Text>一樣美麗</Text>
+        </View>
+        <View style={styles.cardSectionStyle}>
+          <Image
+            style={styles.imageStyle}
+            source={{
+              uri:
+                "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg"
+            }}
+          />
+        </View>
+      </View>
+      </View>
+  
+    </View>
    
-      <View style={styles.square}></View>
-      <View style={styles.square1}></View>
-      <View style={styles.square2}></View>
-      <View style={styles.square3}></View>
-      <View style={styles.square4}></View>
-      <View style={styles.square5}></View>
-   </View>
-    
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFB5B5',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily:'微軟正黑體',
-    
+  headerStyle: {
+    backgroundColor: "#E6E6FA",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 90,
+    paddingTop: 30,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    // Android Only
+    elevation: 2
   },
-  p1:{
-    fontSize:18,
-    color:'#666666',
+  textStyle: {
+    fontSize: 20,
+    color:"#8674A1",
   },
-  p2:{
-  fontSize:20,
-  top:10,
-  color:'#666666',
+  cardContainerStyle:{
+    borderWidth:1,
+    borderRadius:2,
+    borderColor:"#ddd",
+    shadowColor:"#000",
+    shadowOffset:{width:0,height:0},
+    shadowOpacity:0.1,
+    shadowRadius:2,
+    elevation:1,
+    marginLeft:5,
+    marginRight:5,
+    marginTop:10,
   },
-  square:{
-   width: 30,
-   height: 30,
-   bottom:-80,
-   backgroundColor:'#FF8888',
+  thumbnailContainerStyle:{
+    flexDirection:"row",
+    justifyContent:"flex-start",
   },
-  square1:{
-  width: 30,
-  height: 30,
-  bottom:-40,
-  right:20,
-  backgroundColor:'#FF8888',
+  thumbnailStyle:{
+    height:50,
+    width:50,
   },
-  square2:{
-  width: 30,
-  height: 30,
-  bottom:-0,
-  right:40,
-  backgroundColor:'#FF8888',
+  headerContentStyle:{
+    flexDirection:"column",
+    justifyContent:"space-around",
   },
-  square3:{
-  width: 30,
-  height: 30,
-  bottom:20,
-  right:-20,
-  backgroundColor:'#FF8888',
+  cardSectionStyle:{
+    padding:5,
+    backgroundColor:"#fff",
+    borderColor:"#ddd",
+    borderBottomWidth:1,
   },
-  square4:{
-  width: 30,
-  height: 30,
-  bottom:60,
-  right:-40,
-  backgroundColor:'#FF8888',
+  imageStyle:{
+    height:300,
+    width:null,
   },
-  square5:{
-    width: 30,
-    height: 30,
-    bottom:40,
-    
-    backgroundColor:'#FF8888',
-    },
+ 
 });
+
+export default App;
