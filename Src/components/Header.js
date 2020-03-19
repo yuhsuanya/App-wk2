@@ -6,7 +6,6 @@ const Header = () => {
         <View style={styles.headerStyle}>
          <Text style={styles.textStyle}>Albums</Text>
         </View>
-        
     );
 };
 
@@ -28,6 +27,7 @@ const styles = StyleSheet.create({
     textStyle: {
       fontSize: 20,
       color:"#8674A1",
+      fontFamily:'TimesNewRomanPS-BoldMT',
     },
 });
 

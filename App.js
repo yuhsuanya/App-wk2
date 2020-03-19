@@ -1,13 +1,13 @@
 import React from "react";
 import { View } from "react-native";
-import Header from "./src/components/Header";
-import AlbumList from "./src/components/AlbumList";
+import Header from "./Src/components/Header";
+import AlbumList from "./Src/components/AlbumList";
 
 const App = () => {
   return (
    <View>
-     <Header/>
-     <AlbumList/>
+     <Header />
+     <AlbumList />
    </View>
   );
 };
