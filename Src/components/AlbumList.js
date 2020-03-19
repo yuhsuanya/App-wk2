@@ -1,28 +1,28 @@
 import React from "react";
-import { StyleSheet, Text, View,Image } from "react-native";
+import { StyleSheet, Text, View,Image,ScrollView } from "react-native";
+import albumData from "../json/albums";
 
 const Albumlist = () => {
     return (
-    <View>
+    <ScrollView>
       <View style={styles.cardContainerStyle}>
           <View style={[styles.thumbnailContainerStyle,styles.cardSectionStyle]}>
              <Image
               style={styles.thumbnailStyle}
               source={{
-               uri: "https://i.imgur.com/K3KJ3w4h.jpg"
+               uri: albumData[0].thumbnail_image
               }}
              />
              <View style={styles.headerContentStyle}>
-               <Text>Eric Chou</Text>
-               <Text>一樣美麗</Text>
+               <Text>{albumData[0].title}</Text>
+               <Text>{albumData[0].artist}</Text>
              </View>
           </View>
           <View style={styles.cardSectionStyle}>
              <Image
                style={styles.imageStyle}
                source={{
-                 uri:
-                   "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg"
+                 uri: albumData[0].image
                 }}
              />
           </View>
@@ -32,48 +32,46 @@ const Albumlist = () => {
              <Image
               style={styles.thumbnailStyle}
               source={{
-               uri: "https://i.imgur.com/K3KJ3w4h.jpg"
+               uri: albumData[1].thumbnail_image
               }}
              />
              <View style={styles.headerContentStyle}>
-               <Text>Eric Chou</Text>
-               <Text>一樣美麗</Text>
+               <Text>{albumData[1].title}</Text>
+               <Text>{albumData[1].artist}</Text>
              </View>
           </View>
           <View style={styles.cardSectionStyle}>
              <Image
                style={styles.imageStyle}
                source={{
-                 uri:
-                   "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg"
+                 uri: albumData[1].image
                 }}
              />
           </View>
-        </View>
-        <View style={styles.cardContainerStyle}>
+     </View>
+     <View style={styles.cardContainerStyle}>
           <View style={[styles.thumbnailContainerStyle,styles.cardSectionStyle]}>
              <Image
               style={styles.thumbnailStyle}
               source={{
-               uri: "https://i.imgur.com/K3KJ3w4h.jpg"
+               uri: albumData[2].thumbnail_image
               }}
              />
              <View style={styles.headerContentStyle}>
-               <Text>Eric Chou</Text>
-               <Text>一樣美麗</Text>
+               <Text>{albumData[2].title}</Text>
+               <Text>{albumData[2].artist}</Text>
              </View>
           </View>
           <View style={styles.cardSectionStyle}>
              <Image
                style={styles.imageStyle}
                source={{
-                 uri:
-                   "https://images-na.ssl-images-amazon.com/images/I/61McsadO1OL.jpg"
+                 uri: albumData[2].image
                 }}
              />
           </View>
-        </View>
-    </View>
+     </View>
+    </ScrollView>
     );
   };
 
